@@ -65,6 +65,7 @@
 
                 <div>
                     <form id="form_buying_product" class="form-inline">
+                        {% csrf_token %}
                         <div class="form-group">
                              <input type="number" class="form-control" name="number" id="number">
                         </div>
