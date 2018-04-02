@@ -8,7 +8,7 @@
             {% if products_in_basket %}
                 <div class="col-lg-8 col-lg-offset-2">
                     <h3 class="text-center">Товары в корзине</h3>
-                    <!--<h5 class="text-center">Общая стоимость: {{ request.session.basket.total_amount }} USD </h5>-->
+                    <!--<h5 class="text-center">Общая стоимость: {{ request.session.basket.total_amount }} </h5>-->
                             <!--{{ request.session.basket.products }}-->
 
                     <form class="form-horizontal" method="post">
@@ -16,7 +16,7 @@
 
                         <div class="form-group">
                             <div class="col-lg-4">
-                                <label>Имя</label>
+                                <label>Ваше имя</label>
                                 <span class="form-error">{{ form.name.errors }}</span>
                                 <input type="text" name="{{ form.name.html_name }}" class="form-control"
                                        value="{{ request.POST.name }}"
@@ -26,7 +26,17 @@
 
                         <div class="form-group">
                             <div class="col-lg-4">
-                                <label>Телефон</label>
+                                <label>Ваш email</label>
+                                <span class="form-error">{{ form.email.errors }}</span>
+                                <input type="text" name="{{ form.email.html_name }}" class="form-control"
+                                       value="{{ request.POST.email }}"
+                                >
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <div class="col-lg-4">
+                                <label>Ваш телефон</label>
                                 <span class="form-error">{{ form.phone.errors }}</span>
                                 <input type="text" name="{{ form.phone.html_name }}" class="form-control"
                                        value="{{ request.POST.phone }}"
@@ -40,7 +50,7 @@
                                 <tr>
                                     <th>Название товара</th>
                                     <th>Количество</th>
-                                    <th>Цена за еденицу</th>
+                                    <th>Цена за единицу</th>
                                     <th>Общая цена</th>
                                 </tr>
                             </thead>
@@ -51,7 +61,7 @@
                                              {{ product_in_basket.product.name }}
                                         </td>
                                         <td>
-                                             <input value="{{ product_in_basket.nmb }}" type="number"
+                                             <input value="{{ product_in_basket.nmb }}" type="number" min="0"
                                                      class="product-in-basket-nmb"
                                                      name="product_in_basket_{{ product_in_basket.id }}">
                                         </td>
@@ -71,7 +81,7 @@
                         </table>
 
                         <div class="text-right">
-                            <b>Сумма заказа: </b> <span id="total_order_amount">54</span>
+                            <b>Сумма заказа: </b> <span id="total_order_amount"></span>
                         </div>
 
                         <hr>

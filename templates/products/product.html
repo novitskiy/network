@@ -36,12 +36,7 @@
                         </li>
                         <li role="presentation">
                             <a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">
-                                Messages
-                            </a>
-                        </li>
-                        <li role="presentation">
-                            <a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">
-                                Settings
+                                Отзывы
                             </a>
                         </li>
                       </ul>
@@ -49,16 +44,13 @@
                       <!-- Tab panes -->
                       <div class="tab-content product-description-tabs">
                         <div role="tabpanel" class="tab-pane fade in active" id="description">
-                            {{ product.description }}
+                            <p>{{ product.description }}</p>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="delivery">
-                            <h3>Как мы делаем доставку</h3>
+                            <p>У нас доставка очень быстрая! Попробуйте и убедитесь сами!</p>
                         </div>
                         <div role="tabpanel" class="tab-pane fade" id="messages">
-                            ...
-                        </div>
-                        <div role="tabpanel" class="tab-pane fade" id="settings">
-                            ...
+                            <p>К сожалению, отзывов об этом товаре пока нет.</p>
                         </div>
                       </div>
                 </div>
@@ -67,7 +59,7 @@
                     <form id="form_buying_product" class="form-inline" action="{% url 'basket_adding' %}">
                         {% csrf_token %}
                         <div class="form-group">
-                             <input type="number" class="form-control" name="number" id="number">
+                             <input type="number" min="0" class="form-control" name="number" id="number">
                         </div>
                         <div class="form-group">
                             <button type="submit" id="submit_btn" class="btn btn-success btn-buy"
@@ -81,6 +73,7 @@
 
                     </form>
                 </div>
+                <hr>
             </div>
         </div>
     </div>
