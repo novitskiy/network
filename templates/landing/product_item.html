@@ -17,12 +17,14 @@
             {{ product_image.product.description|truncatechars_html:70 }}
         </p>
         <div class="price">
-            {{ product_image.product.price }} USD
+            {{ product_image.product.price }}
         </div>
         <div class="add-to-card-btn">
-            <button class="btn btn-success">
-                Добавить в корзину
-            </button>
+            <a href="{% url 'product' product_image.product.id %}">
+                <button class="btn btn-success">
+                    Подробнее
+                </button>
+            </a>
         </div>
     </div>
 </div>

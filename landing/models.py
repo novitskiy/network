@@ -9,6 +9,6 @@ class Subscriber(models.Model):
         return "Пользователь %s %s" % (self.name, self.email)
 
     class Meta:
-        verbose_name = 'Пользователь'
-        verbose_name_plural = 'Пользователи'
+        verbose_name = 'Подписчик'
+        verbose_name_plural = 'Подписчики'
 

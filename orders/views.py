@@ -54,19 +54,20 @@ def checkout(request):
 
     form = CheckoutContactForm(request.POST or None)
     if request.POST and form.is_valid():
-        data = request.POST
-        name = data.get("name")
-        phone = data["phone"]
+        name = request.POST.get("name")
+        phone = request.POST.get("phone")
+        email = request.POST.get("email")
         user, created = User.objects.get_or_create(
-                username=phone,
-                defaults={"first_name": name})
+                username=email,
+                defaults={"first_name": name, "last_name": phone})
         order = Order.objects.create(
                 user=user,
                 customer_name=name,
                 customer_phone=phone,
+                customer_email=email,
                 status_id=1)
 
-        for name, value in data.items():
+        for name, value in request.POST.items():
             if name.startswith("product_in_basket_"):
                 product_in_basket_id = name.split("product_in_basket_")[1]
                 product_in_basket = ProductInBasket.objects.get(
