@@ -1,6 +1,6 @@
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
 from .models import *
-from django.shortcuts import render, redirect
+from django.shortcuts import render
 from .forms import CheckoutContactForm
 from django.contrib.auth.models import User
 
@@ -85,9 +85,5 @@ def checkout(request):
                         total_price=product_in_basket.total_price,
                         order=order)
 
-        return redirect('order_saved/')
+        return HttpResponseRedirect(request.META['HTTP_REFERER'])
     return render(request, 'orders/checkout.html', locals())
-
-
-def order_saved(request):
-    return render(request, 'orders/order_saved.html')

@@ -38,23 +38,12 @@ ul{
     padding: 10px;
 }
 
-.product-img{
-    max-height: 180px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 .section{
     padding: 50px 0;
 }
 
 .section h1{
     margin-bottom: 40px;
-}
-
-.delete-item:hover{
-    text-decoration: none;
 }
 
 .product-item{
@@ -158,6 +147,7 @@ ul{
 
 
 
+
 .dropbtn {
     background-color: #4CAF50;
     color: white;
@@ -175,7 +165,7 @@ ul{
     display: none;
     position: absolute;
     background-color: #f1f1f1;
-    min-width: 360px;
+    min-width: 380px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
