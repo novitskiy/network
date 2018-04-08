@@ -14,10 +14,12 @@
                 </div>
 
                 <div class="col-lg-8">
-                    <form>
-                        <div class="form-row">
+                    <form action="{% url 'email_saved' %}" method="post">
+                        {% csrf_token %}
+                        <div>
                             <div class="col-12 col-md-9 mb-2 mb-md-0">
-                                <input type="email" placeholder="Enter your email...">
+                                {{ subscriber_form.email }}
+                                <!--<input type="email" placeholder="Enter your email...">-->
                             </div>
                             <div class="col-12 col-md-3">
                                 <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>

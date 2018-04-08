@@ -1,8 +1,6 @@
 from .forms import SubscriberForm
 
 
-def get_subscriber_form(request):
-    form = SubscriberForm(request.POST or None)
-    if request.method == "POST" and form.is_valid():
-        form.save()
+def handle_subscriber_form(request):
+    subscriber_form = SubscriberForm()
     return locals()

@@ -70,7 +70,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
 
                 'orders.context_processors.get_basket_info',
-                'landing.context_processors.get_subscriber_form',
+                'landing.context_processors.handle_subscriber_form',
             ],
         },
     },

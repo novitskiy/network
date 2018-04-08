@@ -91,13 +91,6 @@ ul {
     padding: 3px;
 }
 
-.section-delivery {
-    height: 300px;
-    background-color: darkseagreen;
-    text-align: center;
-    color: white;
-}
-
 .product-image-item {
     padding: 5px;
     margin-bottom: 5px;
@@ -139,6 +132,13 @@ ul {
     color: red;
 }
 
+.header-section {
+    display: block;
+    padding: 10px 0 10px 0;
+    border-radius: 25px 10px;
+    background: linear-gradient(#d8e1ea, #a1b2e6);
+}
+
 .header-link {
     color: #ffffff;
     font-size: 18px;
@@ -175,6 +175,7 @@ input[type=email] {
     border-radius: 4px;
     box-sizing: border-box;
     line-height: 1.5;
+    placeholder: 'Enter ...'
 }
 
 
