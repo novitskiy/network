@@ -4,8 +4,6 @@ from products.models import ProductImage
 
 
 def landing(request):
-    name = "themikhalych"
-    # current_day = "19.03.2018"
     form = SubscriberForm(request.POST or None)
 
     if request.method == "POST" and form.is_valid():
