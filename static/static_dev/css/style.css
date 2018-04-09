@@ -136,7 +136,7 @@ ul {
     display: block;
     padding: 10px 0 10px 0;
     border-radius: 25px 10px;
-    background: linear-gradient(#d8e1ea, #a1b2e6);
+    background: linear-gradient(#cedcea, #a297ed)
 }
 
 .header-link {
@@ -175,11 +175,7 @@ input[type=email] {
     border-radius: 4px;
     box-sizing: border-box;
     line-height: 1.5;
-    placeholder: 'Enter ...'
 }
-
-
-
 
 
 

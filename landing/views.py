@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .forms import SubscriberForm
 from products.models import ProductImage
+from .models import Subscriber
 
 
 def home(request):
@@ -20,7 +21,10 @@ def email_saved(request):
     if request.method == "POST":
         subscriber_form = SubscriberForm(request.POST)
         if subscriber_form.is_valid():
-            subscriber_form.save()
+            subscriber_email = request.POST.get('email')
+            new_subscriber, is_created = Subscriber.objects.get_or_create(
+                email=subscriber_email
+            )
             subscriber_form = SubscriberForm()
     return render(request, 'landing/email_saved.html', locals())
 
