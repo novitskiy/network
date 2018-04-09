@@ -1,26 +1,39 @@
+{% load static %}
+
 <footer class="footer">
-    <div class="container top-container">
-        <div class="row">
-            <div class="col-lg-8 col-lg-offset-2">
-                <h2 class="title">Оставьте свой email:</h2>
-                <div>
-                    <form action="" method="post" class="form form-inline text-center">
-                        {% csrf_token %}
-                        <div class="form-group">
-                            <label>Ваше имя:</label>
-                            {{ form.name }}
-                        </div>
-                        <div class="form-group">
-                            <label>Ваш email:</label>
-                            {{ form.email }}
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-orange">Отправить</button>
-                    </form>
+    <section class="call-to-action text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-9 mx-auto">
+                    <h2 class="mb-4" id="header-email">Ready to get started? Sign up now!</h2>
                 </div>
             </div>
+
+            <div class="row">
+                <div class="col-lg-2">
+                </div>
+
+                <div class="col-lg-8">
+                    <form action="{% url 'email_saved' %}" method="post">
+                        {% csrf_token %}
+                        <div>
+                            <div class="col-12 col-md-9 mb-2 mb-md-0">
+                                {{ subscriber_form.email }}
+                                <!--<input type="email" placeholder="Enter your email...">-->
+                            </div>
+                            <div class="col-12 col-md-3">
+                                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div class="col-lg-2">
+                </div>
+
+            </div>
+
         </div>
-    </div>
+    </section>
 </footer>
-
-
 

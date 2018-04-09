@@ -1,6 +1,6 @@
-from django.http import JsonResponse, HttpResponse, HttpResponseRedirect
+from django.http import JsonResponse
 from .models import *
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import CheckoutContactForm
 from django.contrib.auth.models import User
 
@@ -16,13 +16,13 @@ def basket_adding(request):
     if is_delete == 'true':
         ProductInBasket.objects.filter(id=product_id).update(is_active=False)
     else:
-        new_product, created = ProductInBasket.objects.get_or_create(
+        new_product, is_created = ProductInBasket.objects.get_or_create(
                 session_key=session_key,
                 product_id=product_id,
                 is_active=True,
                 defaults={"nmb": nmb}
         )
-        if not created:
+        if not is_created:
             new_product.nmb += int(nmb)
             new_product.save(force_update=True)
 
@@ -85,5 +85,9 @@ def checkout(request):
                         total_price=product_in_basket.total_price,
                         order=order)
 
-        return HttpResponseRedirect(request.META['HTTP_REFERER'])
+        return redirect('order_saved/')
     return render(request, 'orders/checkout.html', locals())
+
+
+def order_saved(request):
+    return render(request, 'orders/order_saved.html')
