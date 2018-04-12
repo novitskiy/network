@@ -25,7 +25,7 @@ SECRET_KEY = '0)rfc4x-vg#%h_y2m1#jgg$3g4s8_7y5!%jysik1$1ud%3fbwr'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -114,7 +114,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 TIME_ZONE = 'Europe/Moscow'
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 USE_I18N = True
 
@@ -138,3 +138,4 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static", "static_prod")
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "static", "media")
+
