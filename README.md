@@ -3,7 +3,9 @@
 ### How to deploy it (for example, on your local machine):
 
 #### First of all, clone this repository:
-$ cd /your/preferred/path & git clone https://github.com/novitskiy/network.git
+$ cd </your/preferred/path>
+
+$ git clone https://github.com/novitskiy/network.git
 
 #### Create a new virtual environment
 $ virtualenv --python=python3.6 shopenv
