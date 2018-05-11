@@ -14,10 +14,10 @@ $ virtualenv --python=python3.6 shopenv
 $ source shopenv/bin/activate
 
 #### Install required dependencies
-$ pip install -r net/requirements.txt
+$ pip install -r network/requirements.txt
 
 #### Run test server
-$ python net/manage.py runserver
+$ python network/manage.py runserver
 
 #### Check localhost:8000 in your browser
 And get fun!
