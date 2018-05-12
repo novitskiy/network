@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.mail import send_mail
 from .forms import SubscriberForm
 from products.models import ProductImage
 from .models import Subscriber
@@ -26,6 +27,14 @@ def email_saved(request):
                 email=subscriber_email
             )
             subscriber_form = SubscriberForm()
+
+    send_mail(
+        'Подписка на новости магазина',
+        'Спасибо за подписку на наш магазин!',
+        'admin@admin.com',
+        [str(subscriber_email)],
+        fail_silently=False
+    )
     return render(request, 'landing/email_saved.html', locals())
 
 
